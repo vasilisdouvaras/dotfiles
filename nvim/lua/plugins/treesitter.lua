@@ -2,7 +2,7 @@ return {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
     opts = {
-        ensure_installed = { "help", "javascript", "typescript", "lua" },
+        ensure_installed = { "help", "javascript", "typescript", "lua", "hcl", "terraform" },
         sync_install = false,
         auto_install = true,
         highlight = {
