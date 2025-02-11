@@ -49,6 +49,10 @@ vim.opt.signcolumn = "yes"
 
 vim.opt.updatetime = 50
 
+-- Configure how new splits should be opened
+vim.opt.splitright = true
+vim.opt.splitbelow = true
+
 -- Highlight when yanking (copying) text
 --  Try it with `yap` in normal mode
 --  See `:help vim.highlight.on_yank()`
