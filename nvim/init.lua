@@ -30,6 +30,14 @@ vim.keymap.set("n", "N", "Nzzzv")
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
+-- Sync clipboard between OS and Neovim.
+--  Schedule the setting after `UiEnter` because it can increase startup-time.
+--  Remove this option if you want your OS clipboard to remain independent.
+--  See `:help 'clipboard'`
+vim.schedule(function()
+  vim.opt.clipboard = 'unnamedplus'
+end)
+
 vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
 vim.opt.shiftwidth = 2
@@ -68,7 +76,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 require("lazy").setup({
   {
     'nvim-telescope/telescope.nvim',
-    tag = '0.1.8',
+    -- tag = '0.1.8',
     dependencies = { 'nvim-lua/plenary.nvim' },
     config = function()
       local builtin = require('telescope.builtin')
